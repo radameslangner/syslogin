@@ -1,0 +1,23 @@
+<%- include ('partials/top'); %>
+<header><%- include ('partials/navbar'); %></header>
+<main>
+    <div>
+        <h1 class="text-center">Bem vido a nossa Home!</h1>
+        <hr>
+        <p class="text-dark margin-left-right-5por">
+            <% if (user) {%> 
+            <%=user.nome%>
+            <% } %>
+        </p>
+        <p class="text-dark text-justify margin-left-right-5por">Seja bem-vindo. Vamos iniciar pela elaboração do
+            plano de contas, o qual pode ser acessado
+            a partir do menu de opções acima. Logo após, inicie os lançamentos de movimentação de receitas
+            ou
+            despesas do caixa.
+            Também é possível o acompanhamento da evolução de suas contas, a partir de relatórios de
+            controle do sistema.
+        </p>
+    </div>
+</main>   
+
+<%- include ('partials/down'); %>

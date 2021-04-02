@@ -1,0 +1,33 @@
+<%- include ('partials/top'); %>
+<main class="flex-container direction-column">
+
+  
+        
+    <h1 class="text-center">Autenticação de Usuário</h1>
+  
+        
+    <form action="/login" method="POST"> 
+
+        <div class="flex-container">
+            <label  class="">Login</label>
+            <input class="campo-form" type="text" name="email" required autofocus>
+        </div>
+
+        <div class="flex-container margin-top-10px">
+            <label class="">Senha</label>
+            <input class="campo-form" type="password" name="senha" placeholder="Mantenha sua senha em segredo.">
+        </div>
+
+        <div class="flex-container base-line"> 
+            <input class="button margin-left-30-por btn btn-primary" type="submit" value="Login">
+            <a href="/user/new" class="btn-link margin-left-10-px">Quero me cadastrar</a>
+        </div>
+        <div class="flex-container"> 
+            <a href="/user/forgets" class="btn-link text-center margin-top-10px color-jorgets">Recuperação de senha por e-mail</a>
+        </div>
+    </form>       
+
+    <%- include ('partials/message'); %>
+
+</main>
+<%- include ('partials/down'); %>

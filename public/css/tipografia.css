@@ -1,0 +1,46 @@
+
+@font-face{
+    font-family: 'awesome';
+    src: url("../font/Font\ Awesome\ 5\ Free-Solid-900.otf")
+}
+
+
+
+@font-face{
+    font-family: 'oswald';
+    src:url("../font/Oswald-VariableFont_wght.ttf")
+}
+
+@font-face{
+    font-family: 'nunito';
+    src: url("../font/Nunito-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'Titillium';
+    src: url("../font/TitilliumWeb-Light.ttf");
+}
+
+@font-face{
+    font-family: 'reggae-one';
+    src: url(../font/ReggaeOne-Regular.ttf);
+}
+
+/*   -----   Fontes   -----   */
+
+
+.font-oswald {
+    font-family: 'oswald';
+}
+
+.font-awesome{
+    font-family: 'awesome';
+}
+
+.font-reggae-one{
+    font-family: "reggae-one";
+}
+
+.font-size-1p5em {
+    font-size: 1.5em;
+}

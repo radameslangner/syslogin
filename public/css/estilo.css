@@ -1,0 +1,177 @@
+@font-face{
+    font-family: 'awesome';
+    src: url("../font/Font\ Awesome\ 5\ Free-Solid-900.otf")
+}
+
+.awesome{
+    font-family: 'awesome';
+}
+
+@font-face{
+    font-family: 'oswald';
+    src:url("../font/Oswald-VariableFont_wght.ttf")
+}
+
+body {
+    background-color: rgb(113, 194,208);
+    background-image: url(../imagens/bgimage2.jpg);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+.flex-container{
+    display: flex;
+    align-items: center;
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.as-stretch {
+    align-self: stretch;
+}
+.as-center {
+    align-self: center;
+}
+.ac-center{
+    align-content: center;
+}
+.ai-flex-start{
+    align-items: flex-start;
+}
+
+.ta-center {
+    text-align: center;
+}
+.margin-50 {
+    margin: 50px;
+}
+.logo {
+    max-height: 120px;
+    display: flex;
+    border-radius: 15px;
+}
+.flex-grow-1 {
+    flex-grow: 1;
+}
+.metade {
+    width: 50%;
+}
+.menu{
+    display: flex;
+    list-style: none;    
+    align-content: center;
+    align-items: center;
+    margin: 8px;
+}
+
+li a {
+    display: flex;
+    align-self: center;
+    background-color:rgb(142, 134, 114);
+    border-radius: 15px;
+    color: rgb(52, 52, 52);
+    font-size: 1.4em;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+ li a:hover {
+    display: flex;
+    align-self: center;
+    background-color: rgb(52, 52, 52);
+    border-radius: 15px;
+    color: lightgray;
+    font-size: 1.4em;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+h3 a {
+    text-decoration: none;
+}
+h3 a:hover  {
+    text-decoration: none;
+    color: rgb(253, 177, 55);
+}
+
+.topo {
+    margin-top: 50px;
+}
+
+.awesome {
+    font-family: awesome;
+}
+.oswald {
+    font-family: oswald;
+}
+
+.esquerda{
+    text-align: left;
+}
+
+.direita{
+    text-align: right;
+}
+
+.espaco{
+    margin-left: 25px;
+}
+
+.verde{
+    color: rgb(0, 184, 150);
+}
+
+.red{
+    color: red;
+}
+
+.amarelo {
+    color: rgb(253, 177, 55);
+}
+.padding{
+    padding: 15px;
+}
+.padding-15 {
+    padding: 15px;
+}
+
+.cor-logo {
+    color: rgb(52, 52, 52);
+}
+
+.bg-branco {
+    background-color: white;
+}
+.font-tamanho-padrao {
+    font-size: 1em;
+}
+
+.usuario {
+    height: 65px;
+    width: 300px;
+    font-family: oswald;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding:25px;
+    text-align: right;
+    color: rgb(226, 176, 3);
+    background-color: rgb(94, 94, 94);
+    
+}
+.br-25 {
+    border-radius: 25px;
+}

@@ -1,0 +1,41 @@
+<%- include ('../partials/top'); %>
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Cadastro de Usuário</h1>
+      
+            
+        <form action="/user/save" method="POST">
+    
+            <div class="flex-container">
+                <label  class="">Nome</label>
+                <input class="campo-form" type="text" name="nome" required autofocus>
+            </div>
+
+            <div class="flex-container margin-top-10px">
+                <label  class="">e-mail</label>
+                <input class="campo-form" type="text" name="email" required>
+            </div>
+    
+            <div class="flex-container margin-top-10px">
+                <label class="">Senha</label>
+                <input class="campo-form" type="password" name="senha" placeholder="Mantenha sua senha em segredo.">
+            </div>
+
+            <div class="flex-container margin-top-10px">
+                <label class="">Confirma Senha</label>
+                <input class="campo-form" type="password" name="confirmaSenha" placeholder="Confirme a Senha.">
+            </div>            
+    
+            <div class="flex-container base-line margin-top-10px"> 
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Salvar">
+            </div>
+    
+        </form>       
+
+
+
+<%- include ('../partials/down'); %>
+
+    </main>

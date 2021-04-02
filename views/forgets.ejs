@@ -1,0 +1,26 @@
+<%- include ('partials/top'); %>
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Cadastro de Usuário</h1>
+      
+            
+        <form action="/user/sendMail" method="POST">
+    
+            <div class="flex-container margin-top-10px">
+                <label  class="">e-mail</label>
+                <input class="campo-form" type="text" name="email" required>
+            </div>
+    
+            <div class="flex-container base-line margin-top-10px"> 
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Recuperar Senha">
+            </div>
+    
+        </form>       
+
+
+
+<%- include ('partials/down'); %>
+
+    </main>

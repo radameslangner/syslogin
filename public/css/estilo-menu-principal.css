@@ -1,0 +1,28 @@
+.menu-principal {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(2, 2, 2, 0.5);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul ul {
+    visibility: hidden;
+}
+
+ul li:hover ul {
+    visibility: visible;
+}
+
+li, li a, a {
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    height: 25px;
+    font-size: 1.5em;
+
+}
