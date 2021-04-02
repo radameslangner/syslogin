@@ -3,8 +3,8 @@ const nodemailer = require('nodemailer')
 
 function sendMailForgets(email, forgets) {  
 
-    const admin = 'radahmes@gmail.com'
-    const pass = 'radab166er'
+    const admin = 'sendmailrada@gmail.com'
+    const pass = 'pipoca11!'
     const user = email
 
     const transporter = nodemailer.createTransport({
