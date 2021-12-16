@@ -1,0 +1,46 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Cadastro de Tipo de produtos</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Tipo</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% productTypes.forEach(function(productType){  %>
+
+                <tr>
+                    <td><%=productType.productType%></td>
+                    <td><%=productType.status%></td>
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/productType/edit/<%=productType.id%>" 
+                        ata-toggle="tooltip" title="Editar Tipo"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/productType/excluir/<%=productType.id%>" 
+                        ata-toggle="tooltip" title="Excluir Tipo"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+      
+              
+    </main>
+
+    <article> <%- include ('../partials/menuProduct.ejs'); %></article>
+    <aside><%- include ('../partials/newProductType.ejs'); %></aside>
+
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

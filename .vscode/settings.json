@@ -1,0 +1,7 @@
+{
+    "[scss]": {
+
+        "editor.suggest.insertMode": "replace",
+        "editor.formatOnSave": true
+    }
+}

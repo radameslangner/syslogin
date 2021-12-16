@@ -1,0 +1,65 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Operação Fiscal</h1>
+
+      
+        <form action="/fiscalOperation/save" method="POST">
+
+   
+            <div class="form-group">
+                <label for="id-descricao" class="form-label">Descicao Operação Fiscal </label>
+                <input class="form-control" type="text" id="id-descricao" name="fiscalOperation" placeholder="Informe descrição para OP" required>
+            </div>
+
+            
+            <div class="form-group margin-top-10px">
+                <label for="id-cfop" class="form-label">CFOP</label>
+                <select  class="form-control" id="id-cfop" name="cfopId" >
+                    <option selected="selected" required>Selecione Código Fiscal de Operações e Prestações</option>
+                    <% cfops.forEach(function(cfop){  %>
+                    <option value="<%=cfop.id%>"><%=cfop.cfop%></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-csosn" class="form-label">CSOSN</label>
+                <select  class="form-control" id="id-csosn" name="csosnId" >
+                    <option selected="selected" required>Selecione Código de Situação da Operação no Simples </option>
+                    <% csosns.forEach(function(csosn){  %>
+                    <option value="<%=csosn.id%>"><%=csosn.csosn%></option>
+                    <% }) %>
+                </select>
+            </div>            
+
+            <div class="form-group margin-top-10px">
+                <label for="id-icm" class="form-label">Icms</label>
+                <select  class="form-control" id="id-icm" name="icmId" >
+                    <% icms.forEach(function(icm){  %>
+                    <option value="<%=icm.id%>"><%=icm.aliquota%></option>
+                    <% }) %>
+                </select>
+            </div>   
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Salvar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

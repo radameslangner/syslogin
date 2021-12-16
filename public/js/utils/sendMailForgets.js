@@ -3,8 +3,8 @@ const nodemailer = require('nodemailer')
 
 function sendMailForgets(email, forgets) {  
 
-    const admin = 'sendmailrada@gmail.com'
-    const pass = 'pipoca11!'
+    const admin = 'radahmes@gmail.com'
+    const pass = 'radab166er'
     const user = email
 
     const transporter = nodemailer.createTransport({
@@ -20,14 +20,9 @@ function sendMailForgets(email, forgets) {
         to: user,
         secure: false,
         subject: 'Olá, Seja bem vindo!',
-        html: '<h3>Copie o CÓDIGO ' + forgets + ' para redefinir sua senha.</h3>'
+        html: '<h3>Copie o Código ' + forgets + ' para redefinir sua senha.</h3>'
         
-    }).then(info => {
-        res.send(info)
-    }).catch(error => {
-        res.send(error)
-    })
-            
+        })            
     }
  
     module.exports = sendMailForgets

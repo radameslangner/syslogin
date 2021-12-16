@@ -1,0 +1,51 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Código de Situação da Operação no Simples Nacional</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">CSOSN</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% csosns.forEach(function(csosn){  %>
+
+                <tr>
+                    <td><%=csosn.csosn%></td>
+                    <td><%=csosn.description%></td>
+                    <td><%=csosn.status%></td>
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/csosn/edit/<%=csosn.id%>" 
+                        ata-toggle="tooltip" title="Editar CSOSN"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/csosn/excluir/<%=csosn.id%>" 
+                        ata-toggle="tooltip" title="Excluir CSOSN"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+        <div class="form-group"> 
+            <a href="/csosn/novo" class="margin-top-10px reset">Novo CSOSN</a>
+            
+        </div>
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+    <aside><%- include ('../partials/newCSOSN.ejs'); %></aside>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

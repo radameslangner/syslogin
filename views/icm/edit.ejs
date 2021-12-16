@@ -1,0 +1,53 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Nomenclatura Comum do Mercosul</h1>
+
+      
+        <form action="/icm/edit" method="POST">
+    
+            <div class="form-group margin-top-10px">
+                <label for="id-icm-id" class="form-label">Registro Alíquota de ICMS</label>
+                <input class="form-control" type="text" id="id-icm-id" readonly name="id" value="<%=icm.id%>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id-aliquota" class="form-label">Alíquota ICMS em %</label>
+                <input class="form-control" type="text" id="id-aliquota" name="aliquota" value="<%=icm.aliquota%>" required autofocus>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-icm-status" class="form-label">Status Alíquota de ICMS</label>
+                <select  class="form-control" id="id-icm-statu" name="status" >
+                    <% if(icm.status==true) { %>
+                        <option value="1" selected>Válido</option>
+                        <option value="0">Inválido</option>
+                    <% }
+                        else { %> 
+                            <option value="1">Válido</option>
+                            <option value="0" selected>Inválido</option>
+                        <% } %>
+                </select>
+            </div>
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Editar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

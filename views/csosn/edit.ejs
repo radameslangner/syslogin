@@ -1,0 +1,59 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Código de Situação da Operação no Simples Nacional</h1>
+
+      
+        <form action="/csosn/edit" method="POST">
+    
+            <div class="form-group margin-top-10px">
+                <label for="id-csosn-id" class="form-label">Registro CSOSN</label>
+                <input class="form-control" type="hidden"  name="id" value="<%=csosn.id%>" required>
+                <input class="form-control" type="text" id="id-csosn-id" readonly value="<%=csosn.id%>" required>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-csosn" class="form-label">Código CSOSN</label>
+                <input class="form-control" type="text" id="id-csosn" name="csosn" value="<%=csosn.csosn%>" required>
+            </div>            
+
+            <div class="form-group">
+                <label for="id-descricao" class="form-label">Descicao</label>
+                <input class="form-control" type="text" id="id-descricao" name="description" value="<%=csosn.description%>" required autofocus>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-csosn-status" class="form-label">Status csosn</label>
+                <select  class="form-control" id="id-csosn-status" name="status" >
+                    <% if(csosn.status == 1) { %>
+                        <option value=1 selected>Válido</option>
+                        <option value=0 >Inválido</option>
+                    <% }
+                        else { %> 
+                            <option value=1 >Válido</option>
+                            <option value=0 selected>Inválido</option>
+                        <% }; %>
+                </select>
+            </div>
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Editar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

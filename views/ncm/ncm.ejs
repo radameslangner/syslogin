@@ -1,0 +1,52 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Nomenclatura Comum do Mercosul</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">NCM</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% ncms.forEach(function(ncm){  %>
+
+                <tr>
+                    <td><%=ncm.ncm%></td>
+                    <td><%=ncm.description%></td>
+                    <td><%=ncm.status%></td>
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/ncm/edit/<%=ncm.id%>" 
+                        ata-toggle="tooltip" title="Editar NCM"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/ncm/excluir/<%=ncm.id%>" 
+                        ata-toggle="tooltip" title="Excluir NCM"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+        <div class="form-group"> 
+            <a href="/ncm/novo" class="margin-top-10px reset">Novo NCM</a>
+            
+        </div>
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuProduct.ejs'); %></article>
+    <aside><%- include ('../partials/newNCM.ejs'); %></aside>
+
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

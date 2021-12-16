@@ -1,0 +1,46 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Alíquotas para ICMS</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Alíquota ICMS em %</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% icms.forEach(function(icm){  %>
+
+                <tr>
+                    <td><%=icm.aliquota%></td>
+                    <td><%=icm.status%></td>
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/icm/edit/<%=icm.id%>" 
+                        ata-toggle="tooltip" title="Editar ICMS"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/icm/excluir/<%=icm.id%>" 
+                        ata-toggle="tooltip" title="Excluir ICMS"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+
+             
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+    <aside><%- include ('../partials/newICM.ejs'); %></aside>
+
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

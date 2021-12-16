@@ -1,0 +1,51 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Código Fiscal de Operações e Prestações</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">CFOP</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% cfops.forEach(function(cfop){  %>
+
+                <tr>
+                    <td><%=cfop.cfop%></td>
+                    <td><%=cfop.description%></td>
+                    <td><%=cfop.status%></td>
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/cfop/edit/<%=cfop.id%>" 
+                        ata-toggle="tooltip" title="Editar CFOP"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/cfop/excluir/<%=cfop.id%>" 
+                        ata-toggle="tooltip" title="Excluir CFOP"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+        <div class="form-group"> 
+            <a href="/cfop/novo" class="margin-top-10px reset">Novo CFOP</a>
+            
+        </div>
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+    <aside><%- include ('../partials/newCFOP.ejs'); %></aside>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

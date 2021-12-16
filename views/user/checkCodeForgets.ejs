@@ -6,14 +6,14 @@
             
         <form action="/user/openSessionForgets" method="POST">
 
-            <div class="flex-container margin-top-10px">
-                <label  class="">e-mail</label>
-                <input class="campo-form" type="text" name="email" autofocus required>
+            <div class="form-group">
+                <label for="id-email" class="form-label">e-mail</label>
+                <input class="form-control" type="text" id="id-email" name="email" autofocus required>
             </div>
 
-            <div class="flex-container margin-top-10px">
-                <label class="">Código de verificação</label>
-                <input class="campo-form" type="text" name="forgets" placeholder="Informe código enviado para seu e-mail." required>
+            <div class="form-group">
+                <label for="id-forgets" class="form-label">Código de verificação</label>
+                <input class="form-control" type="text" id="id=forgets" name="forgets" placeholder="Informe código enviado para seu e-mail." required>
             </div>
 
             <div class="flex-container base-line margin-top-10px"> 
@@ -22,6 +22,10 @@
     
         </form>       
 
-    <%- include ('../partials/down'); %>
+  
 
     </main>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

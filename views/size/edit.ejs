@@ -1,0 +1,58 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Unidade de medida para produtos</h1>
+
+      
+        <form action="/size/edit" method="POST">
+    
+            <div class="form-group margin-top-10px">
+                <label for="id-size-id" class="form-label">Registro size</label>
+                <input class="form-control" type="text" id="id-size-id" readonly name="id" value="<%=size.id%>" required>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-size" class="form-label">Definição Para Tamanho</label>
+                <input class="form-control" type="text" id="id-size" name="size" value="<%=size.size%>" required>
+            </div>            
+
+            <div class="form-group">
+                <label for="id-descricao" class="form-label">Descicao</label>
+                <input class="form-control" type="text" id="id-descricao" name="description" value="<%=size.description%>" required autofocus>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-size-status" class="form-label">Status Tamanho</label>
+                <select  class="form-control" id="id-size-status" name="status" >
+                    <% if(size.status==true) { %>
+                        <option value=1 selected>Válido</option>
+                        <option value=0>Inválido</option>
+                    <% }
+                        else { %> 
+                            <option value=1>Válido</option>
+                            <option value=0 selected>Inválido</option>
+                        <% }; %>
+                </select>
+            </div>
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Editar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuProduct.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

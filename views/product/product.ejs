@@ -1,0 +1,64 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Cadastro de Produtos</h1>
+
+      
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Registro do Produto</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Referência</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Unidade</th>
+                <th scope="col">Tamanho</th>
+                <th scope="col">NCM</th>
+                <th scope="col">Custo</th>
+                <th scope="col">Preço</th>
+                <th scope="col">OP</th>
+                <th scope="col">Status</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+            </thead>
+            <tbody>  
+
+        <% products.forEach(function(product){  %>
+
+                <tr>
+                    <td><%=product.id%></td>
+                    <td><%=product.description%></td>
+                    <td><%=product.reference%></td>
+                    <td><%=product.producttype.productType%></td>
+                    <td><%=product.unity.description%></td>
+                    <td><%=product.size.size%></td>
+                    <td><%=product.ncm.ncm%></td>
+                    <td><%=product.cost%></td>
+                    <td><%=product.price%></td>
+                    <td><%=product.status%></td>
+
+                    <td class="ta-center"><a class="font-awesome color-edit" href="/product/edit/<%=product.id%>" 
+                        ata-toggle="tooltip" title="Editar Unidade"></a></td>
+                    <td class="ta-center"><a class="font-awesome color-delete" href="/product/excluir/<%=product.id%>" 
+                        ata-toggle="tooltip" title="Excluir CFOP"
+                        onclick="return confirm('Confirmar a Exclusão?')"></a></td>                                       
+                </tr>
+                </tr>
+        <% }) %>
+            </tbody>
+        </table>
+      
+              
+    </main>
+
+    <article> <%- include ('../partials/menuProduct.ejs'); %></article>
+    <aside><%- include ('../partials/newProduct.ejs'); %></aside>
+
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

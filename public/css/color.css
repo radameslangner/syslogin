@@ -2,6 +2,10 @@
     color:crimson;
 }
 
+.color-atencao {
+    color:#dc143c;
+}
+
 
 .color-delit {
     color: #222;
@@ -23,6 +27,18 @@
     color: indianred;
 }
 
-.color-jorgets{
+.color-forgets{
     color: lightcoral;
+}
+
+.color-bg-popos {
+    color: #574F4A;
+}
+
+.color-yellow-popos {
+    color: #FAA41A;
+}
+
+.color-blue-popos {
+    color: #6ACAD8;
 }

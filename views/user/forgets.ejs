@@ -3,24 +3,25 @@
     <main class="flex-container direction-column">
 
          
-        <h1 class="text-center">Cadastro de Usuário</h1>
+        <h1 class="text-center">Recuperação de Senha</h1>
       
             
         <form action="/user/sendMail" method="POST">
     
-            <div class="flex-container margin-top-10px">
-                <label  class="">e-mail</label>
-                <input class="campo-form" type="text" name="email" required>
+            <div class="form-group margin-top-10px">
+                <label for="id-email"  class="form-label">e-mail</label>
+                <input class="form-control" type="text" id="id-email" name="email" placeholder="Informe seu e-mail" required>
             </div>
     
-            <div class="flex-container base-line margin-top-10px"> 
-                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Recuperar Senha">
+            <div class="base-line margin-top-10px"> 
+                <input class="button btn btn-primary" type="submit" value="Recuperar Senha">
             </div>
     
         </form>       
 
-
-
-<%- include ('../partials/down'); %>
-
     </main>
+
+    
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

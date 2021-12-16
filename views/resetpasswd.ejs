@@ -2,26 +2,27 @@
 
     <main class="flex-container direction-column">
      
-        <h1 class="text-center">Cadastro de Usuário</h1>  
+        <h1 class="text-center">Reset Senha</h1>  
             
         <form action="/setpasswd" method="POST">
 
-            <div class="flex-container margin-top-10px">
-                <label  class="">e-mail</label>
-                <input class="campo-form" type="text" name="email" autofocus required>
+            <div class="form-group">
+                <label for="id-email" class="form-label">e-mail</label>
+                <input class="form-control" type="text" id="id-email" name="email" autofocus required>
             </div>
 
-            <div class="flex-container margin-top-10px">
-                <label class="">Código de verificação</label>
-                <input class="campo-form" type="text" name="forgets" placeholder="Informe código enviado para seu e-mail." required>
+            <div class="form-control">
+                <label for="id-forgets" class="form-label">Código de verificação</label>
+                <input class="form-control" type="text" id="id-forgets" name="forgets" placeholder="Informe código enviado para seu e-mail." required>
             </div>
 
-            <div class="flex-container base-line margin-top-10px"> 
+            <div class="base-line margin-top-10px"> 
                 <input class="button margin-left-30-por btn btn-primary" type="submit" value="Recuperar senha">
             </div>
     
-        </form>       
-
-    <%- include ('partials/down'); %>
+        </form>        
 
     </main>
+
+    <%- include ('partials/footer'); %>
+    <%- include ('partials/down'); %>

@@ -8,34 +8,36 @@
             
         <form action="/user/save" method="POST">
     
-            <div class="flex-container">
-                <label  class="">Nome</label>
-                <input class="campo-form" type="text" name="nome" required autofocus>
+            <div class="form-group">
+                <label for="id-nome" class="form-label">Nome</label>
+                <input class="form-control" type="text" id="id-nome" name="nome" required autofocus>
             </div>
 
-            <div class="flex-container margin-top-10px">
-                <label  class="">e-mail</label>
-                <input class="campo-form" type="text" name="email" required>
+            <div class="form-group margin-top-10px">
+                <label for="id-email" class="form-label">e-mail</label>
+                <input class="form-control" type="text" id="id-email" name="email" required>
             </div>
     
-            <div class="flex-container margin-top-10px">
-                <label class="">Senha</label>
-                <input class="campo-form" type="password" name="senha" placeholder="Mantenha sua senha em segredo.">
+            <div class="form-group margin-top-10px">
+                <label for="id-senha" class="form-label">Senha</label>
+                <input class="form-control" type="password" id="id-senha" name="senha" placeholder="Mantenha sua senha em segredo.">
             </div>
 
-            <div class="flex-container margin-top-10px">
-                <label class="">Confirma Senha</label>
-                <input class="campo-form" type="password" name="confirmaSenha" placeholder="Confirme a Senha.">
+            <div class="form-group margin-top-10px">
+                <label for="id-confirma-senha" class="form-label">Confirma Senha</label>
+                <input class="form-control" type="password" id="id-confirma-senmha" name="confirmaSenha" placeholder="Confirme a Senha.">
             </div>            
     
-            <div class="flex-container base-line margin-top-10px"> 
-                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Salvar">
+            <div class="form-group base-line margin-top-10px"> 
+                <input class="button btn btn-primary margin-left-30-por" type="submit" value="Salvar">
+                <input class="button btn btn-info margin-left-10-px" type="reset" value="Limpar">
+                
             </div>
     
         </form>       
 
-
-
-<%- include ('../partials/down'); %>
-
     </main>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

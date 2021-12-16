@@ -6,21 +6,21 @@
             
         <form action="/recoveryPasswd" method="POST">
 
-            <div class="flex-container margin-top-10px">
-                <label  class="">e-mail</label>
-                <input class="campo-form" type="text" name="email" autofocus required>
+            <div class="form-group">
+                <label for="id-email" class="form-label">e-mail</label>
+                <input class="form-control" type="text" id="id-email" name="email" autofocus required>
             </div>
 
 
-            <div class="flex-container margin-top-10px">
-                <label class="">Nova Senha</label>
-                <input class="campo-form" type="password" name="novaSenha" placeholder="Nova Sernha.">
+            <div class="form-group">
+                <label for="id-nova-senha" class="form-label">Nova Senha</label>
+                <input class="form-control" type="password" id="id-nova-senha" name="novaSenha" placeholder="Nova Sernha.">
             </div>
     
 
-            <div class="flex-container margin-top-10px">
-                <label class="">Confirmar Nova Senha</label>
-                <input class="campo-form" type="password" name="confirmaSenha" placeholder="Confirmar Nova Senha.">
+            <div class="form-group">
+                <label for="id-confirma-senha" class="form-label">Confirmar Nova Senha</label>
+                <input class="form-control" type="password" id="id-confirma-senha" name="confirmaSenha" placeholder="Confirmar Nova Senha.">
             </div>
 
             <div class="flex-container base-line margin-top-10px"> 
@@ -29,6 +29,7 @@
     
         </form>       
 
-    <%- include ('partials/down'); %>
+       </main>
 
-    </main>
+    <%- include ('partials/footer'); %>
+    <%- include ('partials/down'); %>

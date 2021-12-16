@@ -1,0 +1,58 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Fiscal - Código Fiscal de Operações e Prestações</h1>
+
+      
+        <form action="/cfop/edit" method="POST">
+    
+            <div class="form-group margin-top-10px">
+                <label for="id-cfop-id" class="form-label">Registro CFOP</label>
+                <input class="form-control" type="text" id="id-cfop-id" readonly name="id" value="<%=cfop.id%>" required>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-cfop" class="form-label">Código CFOP</label>
+                <input class="form-control" type="text" id="id-cfop" name="cfop" value="<%=cfop.cfop%>" required>
+            </div>            
+
+            <div class="form-group">
+                <label for="id-descricao" class="form-label">Descicao</label>
+                <input class="form-control" type="text" id="id-descricao" name="description" value="<%=cfop.description%>" required autofocus>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-cfop-status" class="form-label">Status CFOP</label>
+                <select  class="form-control" id="id-cfop-status" name="status" >
+                    <% if(cfop.status==true) { %>
+                        <option value=1 selected>Válido</option>
+                        <option value=0>Inválido</option>
+                    <% }
+                        else { %> 
+                            <option value=1>Válido</option>
+                            <option value=0 selected>Inválido</option>
+                        <% }; %>
+                </select>
+            </div>
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Editar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

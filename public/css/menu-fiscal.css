@@ -1,0 +1,17 @@
+
+nav.menu-fiscal {
+    margin-left: 25px;
+}
+ul.menu-fiscal {
+    display: flex;
+    flex-direction: column;
+}
+ul li.menu-fiscal{
+    margin-left: 25px;
+}
+a:link.menu-fiscal, a:hover.menu-fiscal, a:visited.menu-fiscal {
+    text-decoration: none;
+    color: #FAA41A;
+    margin-left: 25px;
+    text-align: left;
+}

@@ -1,0 +1,103 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Cadastro Novo Produto</h1>
+
+      
+        <form action="/fiscalOperation/save" method="POST">
+
+   
+            <div class="form-group">
+                <label for="id-descricao" class="form-label">Descicao do Produto </label>
+                <input class="form-control" type="text" id="id-descricao" name="description" placeholder="Informe Descrição do Produto" required>
+            </div>
+            
+            <div class="form-group margin-top-10px">
+                <label for="id-type" class="form-label">Tipo</label>
+                <select  class="form-control" id="id-type" name="productTypeId" >
+                    <option selected="selected" required>Selecione um Tipo de Produto</option>
+                    <% productTypes.forEach(function(productType){  %>
+                    <option value="<%=productType.id%>"><%=productType.productType%></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="id-referencia" class="form-label">Referencia</label>
+                <input class="form-control" type="text" id="id-referencia" name="reference" placeholder="Informe Referencia do Produto" required>
+            </div>            
+
+            <div class="form-group">
+                <label for="id-custo" class="form-label">Preço de Custo</label>
+                <input class="form-control" type="number"  step="any" id="id-custo" name="cost" placeholder="Informe Custo do Produto" required>
+            </div>                    
+
+            <div class="form-group">
+                <label for="id-preco" class="form-label">Preço de Venda</label>
+                <input class="form-control" type="number"  step="any" id="id-preco" name="cost" placeholder="Informe Preço de Venda para Produto" required>
+            </div>        
+
+            <div class="form-group margin-top-10px">
+                <label for="id-unity" class="form-label">Unidade de Medida</label>
+                <select  class="form-control" id="id-unity" name="unityId" >
+                    <option selected="selected" required>Selecione uma unidade de Produto</option>
+                    <% unities.forEach(function(unity){  %>
+                    <option value="<%=unity.id%>"><%=unity.unity%> - <%=unity.description%></option>
+                    <% }) %>
+                </select>
+            </div>  
+
+            <div class="form-group margin-top-10px">
+                <label for="id-size" class="form-label">Tamanho do Produto</label>
+                <select  class="form-control" id="id-size" name="sizeId" >
+                    <option selected="selected" required>Selecione um tamanho de produto</option>
+                    <% sizes.forEach(function(size){  %>
+                    <option value="<%=size.id%>"><%=size.size%> - <%=size.description%></option>
+                    <% }) %>
+                </select>
+            </div>          
+            
+
+            <div class="form-group margin-top-10px">
+                <label for="id-ncm" class="form-label">NCM</label>
+                <select  class="form-control" id="id-ncm" name="ncmId" >
+                    <option selected="selected" required>Selecione um NCM</option>
+                    <% ncms.forEach(function(ncm){  %>
+                    <option value="<%=ncm.id%>"><%=ncm.ncm%> - <%=ncm.description%></option>
+                    <% }) %>
+                </select>
+            </div>               
+
+            <div class="form-group margin-top-10px">
+                <label for="id-fiscalOperation" class="form-label">Selecione uma Operação Fiscal</label>
+                <select  class="form-control" id="id-fiscalOperation" name="fiscalOperationId" >
+                    <option selected="selected" required>Selecione uma Operação Fiscal</option>
+                    <% fiscalOperations.forEach(function(fiscalOperation){  %>
+                    <option value="<%=fiscalOperation.id%>"><%=fiscalOperation.fiscalOperation%></option>
+                    <% }) %>
+                </select>
+            </div>              
+
+                        
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Salvar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuProduct.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>

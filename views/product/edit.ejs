@@ -1,0 +1,103 @@
+<%- include ('../partials/top'); %>
+
+<header><%- include ('../partials/navbar'); %></header>
+
+
+    <main class="flex-container direction-column">
+
+         
+        <h1 class="text-center">Operação Fiscal</h1>
+
+      
+        <form action="/fiscalOperation/edit" method="POST">
+    
+            <div class="form-group margin-top-10px">
+                <label for="id-fiscaloperation-id" class="form-label">Registro Operação Fiscal</label>
+                <input class="form-control" type="text" id="id-fiscaloperation-id" readonly name="id" value="<%=fiscalOperation.id%>" required>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-fiscaloperation" class="form-label">Código FiscalOperation</label>
+                <input class="form-control" type="text" id="id-fiscaloperation" name="fiscalOperation" value="<%=fiscalOperation.fiscalOperation%>" required>
+            </div>               
+
+            <div class="form-group margin-top-10px">
+                <label for="id-fiscaloperation-status" class="form-label">Status fiscaloperation</label>
+                <select  class="form-control" id="id-fiscaloperation-status" name="status" >
+                    <% if(fiscalOperation.status==true) { %>
+                        <option value=1 selected>Válido</option>
+                        <option value=0>Inválido</option>
+                    <% }
+                        else { %> 
+                            <option value=1>Válido</option>
+                            <option value=0 selected>Inválido</option>
+                        <% }; %>
+                </select>
+            </div>            
+
+            <div class="form-group margin-top-10px">
+                <label for="id-cfop" class="form-label">CFOP</label>
+                <select  class="form-control" id="id-cfop" name="cfopId" >
+                    
+                    <% cfops.forEach(function(cfop){ 
+                        if (cfop.id == fiscalOperation.cfopId) {%>
+                                <option selected="selected" value="<%=cfop.id%>"><%=cfop.cfop%></option>
+                            <% } 
+                            else { %>
+                                <option value="<%=cfop.id%>"><%=cfop.cfop%></option>
+                            <% } %>
+                    <% }) %>
+
+                </select>
+            </div>
+
+            <div class="form-group margin-top-10px">
+                <label for="id-csosn" class="form-label">CSOSN</label>
+                <select  class="form-control" id="id-csosn" name="csosnId" >
+                    
+                    <% csosns.forEach(function(csosn){ 
+                        if (csosn.id == fiscalOperation.csosnId) {%>
+                                <option selected="selected" value="<%=csosn.id%>"><%=csosn.csosn%></option>
+                            <% } 
+                            else { %>
+                                <option value="<%=csosn.id%>"><%=csosn.csosn%></option>
+                            <% } %>
+                    <% }) %>
+                    
+                </select>
+            </div>            
+
+            <div class="form-group margin-top-10px">
+                <label for="id-icm" class="form-label">Icms</label>
+                <select  class="form-control" id="id-icm" name="icmId" >
+
+                    <% icms.forEach(function(icm){ 
+                        if (icm.id == fiscalOperation.icmId) {%>
+                                <option selected="selected" value="<%=icm.id%>"><%=icm.aliquota%></option>
+                            <% } 
+                            else { %>
+                                <option value="<%=icm.id%>"><%=icm.aliquota%></option>
+                            <% } %>
+                    <% }) %>
+                    
+                </select>
+            </div>   
+
+
+
+            <div class="form-group base-line margin-top-10px"> 
+                
+                <input class="button margin-left-30-por btn btn-primary" type="submit" value="Editar">
+                
+            </div>
+    
+        </form>    
+        
+              
+    </main>
+
+    <article> <%- include ('../partials/menuFiscal.ejs'); %></article>
+
+    <%- include ('../partials/footer'); %>
+
+    <%- include ('../partials/down'); %>
